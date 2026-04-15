@@ -26,22 +26,22 @@ uint8_t samsungState[kSamsungAcStateLength] = {0x02, 0x92, 0x0F, 0x00, 0x00, 0x0
 void setup()
 {
     M5StackChan.begin();
-    USBSerial.begin(115200);
+    Serial.begin(115200);
     irsend.begin();
 }
 
 void loop()
 {
-    USBSerial.println("NEC");
+    Serial.println("NEC");
     irsend.sendNEC(0x00FFE01FUL);
     delay(2000);
-    USBSerial.println("Sony");
+    Serial.println("Sony");
     irsend.sendSony(0xa90, 12, 2);  // 12 bits & 2 repeats
     delay(2000);
-    USBSerial.println("a rawData capture from IRrecvDumpV2");
+    Serial.println("a rawData capture from IRrecvDumpV2");
     irsend.sendRaw(rawData, 67, 38);  // Send a raw data capture at 38kHz.
     delay(2000);
-    USBSerial.println("a Samsung A/C state from IRrecvDumpV2");
+    Serial.println("a Samsung A/C state from IRrecvDumpV2");
     irsend.sendSamsungAC(samsungState);
     delay(2000);
 }

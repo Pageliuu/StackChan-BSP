@@ -35,7 +35,7 @@ decode_results results;
 void setup()
 {
     M5StackChan.begin();
-    USBSerial.begin(115200);
+    Serial.begin(115200);
 
     // Perform a low level sanity checks that the compiler performs bit field
     // packing as we expect and Endianness is as we expect.
@@ -55,23 +55,23 @@ void loop()
     if (irrecv.decode(&results)) {
         // Display a crude timestamp.
         uint32_t now = millis();
-        USBSerial.printf(D_STR_TIMESTAMP " : %06u.%03u\n", now / 1000, now % 1000);
+        Serial.printf(D_STR_TIMESTAMP " : %06u.%03u\n", now / 1000, now % 1000);
         // Check if we got an IR message that was to big for our capture buffer.
-        if (results.overflow) USBSerial.printf(D_WARN_BUFFERFULL "\n", kCaptureBufferSize);
+        if (results.overflow) Serial.printf(D_WARN_BUFFERFULL "\n", kCaptureBufferSize);
         // Display the library version the message was captured with.
-        USBSerial.println(D_STR_LIBRARY "   : v" _IRREMOTEESP8266_VERSION_STR "\n");
+        Serial.println(D_STR_LIBRARY "   : v" _IRREMOTEESP8266_VERSION_STR "\n");
         // Display the tolerance percentage if it has been change from the default.
-        if (kTolerancePercentage != kTolerance) USBSerial.printf(D_STR_TOLERANCE " : %d%%\n", kTolerancePercentage);
+        if (kTolerancePercentage != kTolerance) Serial.printf(D_STR_TOLERANCE " : %d%%\n", kTolerancePercentage);
         // Display the basic output of what we found.
-        USBSerial.print(resultToHumanReadableBasic(&results));
+        Serial.print(resultToHumanReadableBasic(&results));
         // Display any extra A/C info if we have it.
         String description = IRAcUtils::resultAcToString(&results);
-        if (description.length()) USBSerial.println(D_STR_MESGDESC ": " + description);
+        if (description.length()) Serial.println(D_STR_MESGDESC ": " + description);
         yield();  // Feed the WDT as the text output can take a while to print.
         // Output the results as source code
-        USBSerial.println(resultToSourceCode(&results));
-        USBSerial.println();  // Blank line between entries
-        yield();              // Feed the WDT (again)
+        Serial.println(resultToSourceCode(&results));
+        Serial.println();  // Blank line between entries
+        yield();           // Feed the WDT (again)
     }
     delay(50);
 }
