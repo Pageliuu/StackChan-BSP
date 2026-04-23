@@ -1,8 +1,8 @@
-# Product Name
+# StackChan
 
 ## Overview
 
-### SKU:xxx
+### SKU:K151
 
 Description of the product
 
@@ -12,7 +12,9 @@ Description of the product
 
 ## Required Libraries:
 
-- [Adafruit_BMP280_Library](https://github.com/adafruit/Required_Libraries_Link)
+- [M5Unified](https://github.com/m5stack/M5Unified)
+- [IRremoteESP8266](https://github.com/crankyoldgit/irremoteesp8266)
+- [M5Unit-NFC](https://github.com/m5stack/M5Unit-NFC)
 
 ## License
 
