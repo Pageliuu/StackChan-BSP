@@ -29,4 +29,5 @@ Thank you to the contributors of the StackChan community, especially:
 
 ## License
 
-- [Product Name- MIT](LICENSE)
+- [StackChan- MIT](LICENSE)
+
