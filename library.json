@@ -15,7 +15,7 @@
         "IRremoteESP8266": "*",
         "M5Unit-NFC": "*"
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "frameworks": "arduino",
     "platforms": "espressif32"
 }
