@@ -1,7 +1,7 @@
 {
-    "name": "M5StackChan",
-    "description": "Library for M5StackChan",
-    "keywords": "M5Stack,M5StackChan",
+    "name": "StackChan-BSP",
+    "description": "StackChan board support package for Arduino develop",
+    "keywords": "M5Stack,StackChan",
     "authors": {
         "name": "M5Stack"
     },
@@ -15,7 +15,7 @@
         "IRremoteESP8266": "*",
         "M5Unit-NFC": "*"
     },
-    "version": "1.0.1",
+    "version": "1.0.2",
     "frameworks": "arduino",
     "platforms": "espressif32"
 }
