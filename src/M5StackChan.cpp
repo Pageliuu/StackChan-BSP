@@ -5,7 +5,7 @@
  */
 #include "M5StackChan.h"
 #include "drivers/PY32IOExpander/PY32IOExpander.hpp"
-#include "drivers/SCServo_lib/src/SCSCL.h"
+#include "drivers/FTServo_Arduino/src/SCSCL.h"
 #include "utils/compat/make_unique.h"
 #include "utils/settings/settings.h"
 #include "utility/power/INA226_Class.hpp"
